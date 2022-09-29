@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js" defer></script>
+    <title>Jogo da Velha</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Jogo da velha</h1>
+            <div class="score">
+                <span class="player-name1">Jogador 1</span><span id="p1-score">0</span><span class="separator">:</span><span id="p2-score">0</span><span class="player-name2">Jogador 2</span>
+            </div>
+            <div class="message not-show">Rita venceu!!</div>
+            <button id="new-game button-none">Novo jogo</button>
+        </header>
+        <div class="game-board" id="game-board">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+    </div>
+    <div class="popup-wrapper not-show">
+        <div class="modal">
+            <!-- <div class="modal-close">x</div> -->
+            
+            <form action="#" class="form">   
+                <h2 class="modal-title">NOVO JOGO</h2>
+                    <label for="p1-name-form">Jogador(a) 'x'</label>
+                    <input class="p1-name-form" id="p1-name-form" type="text">
+            
+                    <label for="p2-name-form">Jogador(a) 'o'</label>
+                    <input class="p2-name-form" id="p2-name-form" type="text">
+                
+                    <button class="start-new-game">Jogar</button>                    
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>

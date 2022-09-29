@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Reem+Kufi+Fun&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Pacifico&family=Reem+Kufi+Fun&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Spice&family=Pacifico&family=Reem+Kufi+Fun&display=swap');
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --cell-size: 5em;
+    --cell-size-small-screen: 25vw;
+    --primary-color: #1C1D1F;
+    --second-color: #A435F0;
+    --third-color: #E59819;
+    --fourth-color: #047F7a;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    align-content: center;
+    background-color: var(--primary-color);
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.message {
+    font-family: 'Reem Kufi Fun', sans-serif;
+    font-size: 2rem;
+    color: var(--fourth-color);
+}
+
+#new-game,
+.start-new-game {
+    font-family: 'Reem Kufi Fun', sans-serif;
+    border: none;
+    padding: .75rem 3rem;
+    color: wheat;
+    background-color: var(--fourth-color);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.start-new-game {
+    margin-top: 1em;
+    width: 95%;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Reem Kufi Fun', sans-serif;
+}
+
+h1 {
+    font-family: 'Bungee', cursive;
+    font-size: 8vmin;
+    color: var(--second-color);
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 3px solid var(--fourth-color);
+}
+
+#p1-score,
+#p2-score {
+    font-size: 2rem;
+    color: wheat;
+}
+
+.player-name1 {
+    padding-right: 0.5rem;
+    color: wheat;
+}
+
+.player-name2 {
+    padding-left: 0.5rem;
+    color: wheat;
+}
+
+.separator {
+    color: wheat;
+}
+
+.game-board {
+    /* width: 80%; */
+    height: 50vmin;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+    border-bottom: none;
+}
+
+
+
+.not-show {
+    display: none;
+}
+
+
+.circle {
+    background: url(./img/_circle.png);
+}
+
+.cross {
+    background: url(./img/cross.png);
+}
+
+.circle,
+.cross {
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.popup-wrapper {
+    background: rgba(164, 53, 240, .85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    overflow: scroll;
+}
+
+.modal-title {
+    font-size: 6vmin;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    max-width: 100vw;
+    /* min-width: 15vw; */
+    height: 10em;
+    background: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 00.5em ;
+    padding-top: -4em;
+    z-index: 2;
+    transition: 1000ms;
+    display: block;
+}
+
+.form {
+    background: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .25rem;
+    color: #fff;
+    font-family: 'Reem Kufi Fun', sans-serif;
+    padding: 0 1em 1em 1em;
+    border: 1px solid var(--clr-primary-2);
+}
+
+input {
+    width: 95%;
+}
+
+
+
+@media (max-width: 300px) {
+
+    .container {
+        justify-content: space-between;
+    }
+
+    .game-board {
+        height: 50vw;
+        padding-top: 2vw;    
+    }
+
+    
+    .cell {
+        width: var(--cell-size-small-screen);
+        height: var(--cell-size-small-screen);
+    }
+
+    #p1-score,
+    #p2-score {
+        font-size: 2em;
+    }
+
+    .player-name1 {
+        padding-right: 0.3em;
+    }
+
+    .player-name2 {
+        padding-left: 0.3em;
+    }
+
+    .message {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 200px) {
+    
+}
